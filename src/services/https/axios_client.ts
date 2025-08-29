@@ -5,8 +5,8 @@ import { handleTokenError } from '../cache/index';
 import { renewToken } from './renew_token';
 
 // Define the refresh URL and base URL
-export const refreshURL = '/v1/refresh-token';
-export const baseURL = 'http://localhost:3000';
+export const refreshURL = '/api/v1/auth/refresh';
+export const baseURL = (typeof process !== 'undefined' && process.env?.VITE_BASE_URL) || 'http://localhost:8080';
 
 // Function to set up axios instance with interceptors
 const createAxiosInstance = (headers: Record<string, string>) => {

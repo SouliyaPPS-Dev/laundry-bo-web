@@ -10,3 +10,4 @@ dist-ssr
 /playwright/.cache/
 
 .env.development
+.env.production

@@ -5,7 +5,7 @@ export const getUserList = async ({
   queryParam,
   pagination,
 }: IUsersListParam) => {
-  const response = await baseInstance.get<IUsersListRes>('/v1/users', {
+  const response = await baseInstance.get<IUsersListRes>('/api/v1/users', {
     params: {
       ...queryParam,
       ...pagination,
@@ -16,6 +16,6 @@ export const getUserList = async ({
 
 
 export const getUserDetail = async (id: string) => {
-  const response = await baseInstance.get<UserDetailRes>(`/v1/users/${id}`);
+  const response = await baseInstance.get<UserDetailRes>(`/api/v1/users/${id}`);
   return response.data;
 };

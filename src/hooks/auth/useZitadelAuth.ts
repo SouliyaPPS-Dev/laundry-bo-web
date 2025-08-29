@@ -1,9 +1,9 @@
 import { createZitadelAuth, ZitadelConfig } from '@/config/zitadel';
 
 const zitadelConfig: ZitadelConfig = {
-  authority: 'https://laundry-qndm24.us1.zitadel.cloud',
-  client_id: '326632016554619101',
-  project_resource_id: '326632016554619101',
+  authority: 'https://laundry-w3ruj7.us1.zitadel.cloud',
+  client_id: '335472896774358936',
+  project_resource_id: '335472896774358936',
   redirect_uri: `${window.location.origin}/callback`,
   post_logout_redirect_uri: `${window.location.origin}/`,
 };
