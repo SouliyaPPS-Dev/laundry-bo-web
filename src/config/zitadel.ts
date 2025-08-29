@@ -45,7 +45,12 @@ export function createZitadelAuth(zitadelConfig: ZitadelConfig): ZitadelAuth {
   };
 
   const signout = () => {
-    return userManager.signoutRedirect();
+    // Delegate logout to API to handle SSO end-session and local token revocation
+    const rawBase = (typeof process !== 'undefined' && (process as any).env?.VITE_BASE_URL) || '';
+    const base = rawBase.replace(/\/$/, '');
+    const target = `${base}/api/v1/auth/sso/logout`;
+    window.location.href = target;
+    return Promise.resolve();
   };
 
   const oidc = {
